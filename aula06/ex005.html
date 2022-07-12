@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+body {
+    background-color: rgb(41, 94, 194);
+    color: white;
+    font: normal 12pt Arial;
+}
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Arendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <p>Lorem ipsum dolor sit.</p>
+    <p id="lorem">Lorem ipsum dolor sit amet.</p>
+    <p class="lorem">Lorem ipsum dolor sit amet.</p>
+    <p class="lorem">Lorem ipsum dolor sit amet.</p>
+
+    <div id="mensagem">Clique em mim</div>
+    <br>
+    <script>
+        var corpo = window.document.body
+
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.document.write('O parágrafo 1 está escrito assim: ' + p1.innerHTML) /*Comando para selecionar tags*/
+        p1.style.color = 'yellow'
+        corpo.style.background = 'green'
+
+        var msg = window.document.getElementById('mensagem') 
+        msg.style.background = 'red' /*Comando para selecionar id */
+
+    /*Utiliando Query Selector (É mais prático que os outros)*/
+
+        var d = window.document.querySelector('p#lorem') 
+        d.style.background = 'purple' /*Utilizando com id*/
+
+        var c = window.document.querySelector('p.lorem')
+        c.style.background = 'pink' /*Utilizando com class*/
+
+        var e = window.document.querySelectorAll('p')[2]
+        e.style.background = 'aqua' /*Utilizando com tags*/ 
+
+    </script>
+</body>
+</html>
